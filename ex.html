@@ -3,43 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ID Card Scan</title>
+    <title>Camera Capture and Trimming Tool</title>
     <link rel="stylesheet" href="ex.css">
 </head>
 <body>
     <div class="container">
-        <!-- Step 1: Start Scan -->
-        <div class="step" id="step1">
-            <h1>Swing front of card</h1>
-            <button id="startScanBtn">Start Scan</button>
+        <div class="camera-section">
+            <video id="cameraFeed" autoplay></video>
+            <button id="captureButton">Capture</button>
         </div>
-        
-        <!-- Step 2: Camera Permission -->
-        <div class="step" id="step2">
-            <h1>Camera Permission</h1>
-            <p>Please grant camera access to proceed.</p>
-            <button id="grantPermissionBtn">Grant Permission</button>
-        </div>
-        
-        <!-- Step 3: Instructions -->
-        <div class="step" id="step3">
-            <h1>Tilt a card up or down</h1>
-        </div>
-        
-        <!-- Step 4 & 5: Fake Loader and Retry -->
-        <div class="step" id="step4">
-            <h1>Displaying Loader...</h1>
-            <div class="loader"></div>
-            <p id="instruction">Tilt card further up and down</p>
-        </div>
-        
-        <!-- Step 6: End Screen -->
-        <div class="step" id="step6">
-            <h1 id="result">Result</h1>
-            <div id="resultIcon"></div>
+        <div class="output-section">
+            <canvas id="outputCanvas"></canvas>
+            <video id="outputVideo" controls></video>
+            <button id="trimButton">Trim</button>
         </div>
     </div>
-
     <script src="ex.js"></script>
 </body>
 </html>
