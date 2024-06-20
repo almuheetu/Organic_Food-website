@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         setTimeout(() => {
                             fakeLoader('screen6');
                             if (Math.random() > 0.5) {
-                                result.innerHTML = '<h2>Approved</h2>';
+                                result.innerHTML = '<h2>Approved</h2><p>&#10004;</p>';
                             } else {
-                                result.innerHTML = '<h2>Not Approved</h2>';
+                                result.innerHTML = '<h2>Not Approved</h2><p>&#10060;</p>';
                                 retryButton.style.display = 'block';
                             }
                         }, 2000);

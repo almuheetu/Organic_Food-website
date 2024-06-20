@@ -3,19 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camera Capture and Trimming Tool</title>
+    <title>ID Card Scanner</title>
     <link rel="stylesheet" href="ex.css">
 </head>
 <body>
-    <div class="container">
-        <div class="camera-section">
-            <video id="cameraFeed" autoplay></video>
-            <button id="captureButton">Capture</button>
+    <div id="app">
+        <!-- Screen 1: Start Scan -->
+        <div id="screen1" class="screen">
+            <h1>Swing front of card</h1>
+            <button id="startScan">Start Scan</button>
         </div>
-        <div class="output-section">
-            <canvas id="outputCanvas"></canvas>
-            <video id="outputVideo" controls></video>
-            <button id="trimButton">Trim</button>
+        
+        <!-- Screen 2: Camera Feed -->
+        <div id="screen2" class="screen" style="display: none;">
+            <video id="cameraFeed" autoplay></video>
+        </div>
+        
+        <!-- Screen 3: Instruction 1 -->
+        <div id="screen3" class="screen" style="display: none;">
+            <p>Tilt a card up or down</p>
+        </div>
+        
+        <!-- Screen 4: Loader 1 -->
+        <div id="screen4" class="screen" style="display: none;">
+            <p>Processing...</p>
+        </div>
+        
+        <!-- Screen 5: Instruction 2 -->
+        <div id="screen5" class="screen" style="display: none;">
+            <p>Tilt card further up and down</p>
+        </div>
+        
+        <!-- Screen 6: Loader 2 and Results -->
+        <div id="screen6" class="screen" style="display: none;">
+            <p>Processing...</p>
+            <div id="result" style="display: none;"></div>
+            <button id="retryButton" style="display: none;">Retry</button>
         </div>
     </div>
     <script src="ex.js"></script>
